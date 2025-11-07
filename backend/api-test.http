@@ -1,0 +1,9 @@
+### UPDATE USER DETAILS
+PATCH http://localhost:4000/restUser/update-user
+Content-Type: application/json
+
+{
+  "bio": "I love working on AI-based healthcare systems and journaling daily.",
+  "age": 22,
+  "gender": "Female"
+}

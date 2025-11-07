@@ -10,7 +10,7 @@ export const getAnonymousPosts = async (req, res) => {
     }
 };
 
-export const createAnonymousPost = async (req, res) => {
+export const createAnonymousPost = async (req, res) => { 
     try {
         const { title, article, tags } = req.body;
 

@@ -250,6 +250,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { PhotoIcon } from '@heroicons/react/24/solid';
 import axios from 'axios';
+import BASE_URL from '../../config';
+
 
 const ProfileUpdate = () => {
     const [name, setName] = useState('');
@@ -266,7 +268,8 @@ const ProfileUpdate = () => {
     useEffect(() => {
         const fetchUserDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/${username}/getuserdetails`);
+                const response = await fetch(`${BASE_URL}/${username}/getuserdetails`);
+
                 if (response.status === 200) {
                     const data = await response.json();
                     const { name, email, gender, age, bio, profilePicture } = data;

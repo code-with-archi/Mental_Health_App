@@ -7,6 +7,8 @@ import Loader from "react-js-loader";
 import { Audio } from 'react-loader-spinner';
 import Readjournal from '../journal/Readjournal';
 import defaultProfilePicture from './download2.jpg';
+import BASE_URL from '../../config';
+
 
 const Profile = () => {
   const [userDetails, setUserDetails] = useState(null);
@@ -18,7 +20,8 @@ const Profile = () => {
     // Function to fetch user details
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/${username}/getuserdetails`);
+        const response = await axios.get(`${BASE_URL}/${username}/getuserdetails`);
+
         // Set user details in state
         console.log(response);
         setUserDetails(response.data);

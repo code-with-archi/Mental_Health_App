@@ -1,4 +1,6 @@
 import express from 'express';
+import { analyzeQuiz } from '../controller/quiz-controller.js';
+
 import { userSignup, userLogin, getUsers, deleteUser, updateUser, getUserDetails } from '../controller/user-controller.js';
 import passport from 'passport';
 import '../config/passportConfig.js';
@@ -36,6 +38,8 @@ router.get('/:username/:id', getJournalById);
 
 router.get ('/api/moods/:username', getMoods);
 router.post ('/api/moods/:username', createMood);
+router.post('/quiz/analyze', analyzeQuiz);
+
 
 
 
